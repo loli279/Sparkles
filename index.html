@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. Sparkle - AI Dental Buddy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+      :root {
+        --font-sans: 'Inter', sans-serif;
+        
+        /* New Softer Color Palette */
+        --color-primary: #7C3AED; /* Violet 600 */
+        --color-primary-light: #F5F3FF; /* Violet 50 */
+        --color-primary-dark: #6D28D9; /* Violet 700 */
+        --color-primary-text: #ffffff;
+        
+        --color-accent: #14B8A6; /* Teal 500 */
+        --color-accent-light: #F0FDFA; /* Teal 50 */
+        --color-accent-dark: #0D9488; /* Teal 600 */
+        --color-accent-text: #ffffff;
+
+        --color-secondary: #EC4899; /* Pink 500 */
+        --color-warning: #F59E0B; /* Amber 500 */
+        --color-warning-light: #FFFBEB; /* Amber 50 */
+
+        --color-text-strong: #1F2937;      /* Gray 800 */
+        --color-text-primary: #374151;     /* Gray 700 */
+        --color-text-secondary: #6B7280;   /* Gray 500 */
+        
+        --color-bg-base: #F9FAFB;           /* Gray 50 */
+        --color-bg-app: #FFFFFF;
+        
+        --color-border: #E5E7EB;       /* Gray 200 */
+        --color-border-light: #F3F4F6; /* Gray 100 */
+        --color-border-focus: var(--color-primary);
+        
+        --color-card-bg: #FFFFFF;
+
+        /* Shadows */
+        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+        --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.08);
+        --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+      }
+      html.dark {
+        --color-text-strong: #F9FAFB;      /* Gray 50 */
+        --color-text-primary: #E5E7EB;     /* Gray 200 */
+        --color-text-secondary: #9CA3AF;   /* Gray 400 */
+        
+        --color-bg-base: #111827;           /* Gray 900 */
+        --color-bg-app: #1F2937;           /* Gray 800 */
+        
+        --color-border: #374151;       /* Gray 700 */
+        --color-border-light: #4B5563; /* Gray 600 */
+        
+        --color-card-bg: #374151; /* Gray 700 */
+      }
+      html.dark body {
+        background-color: var(--color-bg-base);
+        background-image:
+          radial-gradient(at 0% 0%, hsla(224, 87%, 29%, 0.2) 0px, transparent 50%),
+          radial-gradient(at 100% 100%, hsla(173, 76%, 26%, 0.2) 0px, transparent 50%);
+        color: var(--color-text-primary);
+      }
+      html.dark ::-webkit-scrollbar-track {
+        background: var(--color-border-light);
+      }
+      html.dark ::-webkit-scrollbar-thumb {
+        background: #6B7280; /* Gray 500 */
+      }
+      html.dark ::-webkit-scrollbar-thumb:hover {
+        background: #9CA3AF; /* Gray 400 */
+      }
+      html.dark .text-gradient-primary {
+          background-image: linear-gradient(to right, #A78BFA, #8B5CF6); /* Violet 400/500 */
+      }
+      /* Font size classes */
+      html.font-size-sm { font-size: 14px; }
+      html.font-size-md { font-size: 16px; }
+      html.font-size-lg { font-size: 18px; }
+
+      body {
+        font-family: var(--font-sans);
+        background-color: var(--color-bg-base);
+        background-image:
+          radial-gradient(at 0% 0%, hsla(224, 87%, 89%, 0.2) 0px, transparent 50%),
+          radial-gradient(at 100% 100%, hsla(173, 76%, 86%, 0.2) 0px, transparent 50%);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: var(--color-text-primary);
+      }
+      .font-sans {
+        font-family: var(--font-sans);
+      }
+      .text-gradient-primary {
+          background-image: linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
+      }
+      .btn-primary {
+          background-image: linear-gradient(to right, var(--color-primary) 0%, var(--color-primary-dark) 51%, var(--color-primary) 100%);
+          background-size: 200% auto;
+          transition: background-position 0.5s;
+      }
+      .btn-primary:hover {
+          background-position: right center;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--color-border-light);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #D1D5DB; /* Gray 300 */
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #9CA3AF; /* Gray 400 */
+      }
+      /* Animations */
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+      @keyframes glow {
+        0%, 100% { box-shadow: 0 0 5px var(--color-accent); }
+        50% { box-shadow: 0 0 15px 3px var(--color-accent); }
+      }
+      .animate-glow {
+        animation: glow 2s ease-in-out infinite;
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.10.0",
+    "recharts": "https://esm.sh/recharts@^3.1.0",
+    "framer-motion": "https://esm.sh/framer-motion@^11.3.19"
+  }
+}
+</script>
+</head>
+<body class="bg-gray-50">
+    <div id="root" class="h-screen w-screen"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>

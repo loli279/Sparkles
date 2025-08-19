@@ -1,0 +1,6 @@
+{
+  "name": "Dr. Sparkle - AI Dental Buddy & Games",
+  "description": "An interactive AI dental health companion for kids. Features a stateful chatbot with customizable personalities, a weekly check-in, progress tracking, and an engaging 'Gremlin Sweeper' game with a point-based quiz.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
