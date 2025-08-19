@@ -35,4 +35,5 @@ Prerequisites:  Node.js
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
-   **also: You need a API Key for Gemini, feel free to change it into a different AI model, though you will need to change the code**
+
+**also: You need a API Key for Gemini, feel free to change it into a different AI model, though you will need to change the code**
