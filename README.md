@@ -2,7 +2,7 @@
 
 **Why I Built Sparkles**
 
-I created Sparkles as a summer passion project at age 15, driven by my interest in healthcare and making a positive impact on children’s health. As someone aspiring to pursue premed studies, I wanted to do more than just study textbooks—I wanted to use technology and creativity to help others build healthy habits.
+I created Sparkles as a summer passion project at age 15, driven by my interest in healthcare and making a positive impact on children’s health. As someone aspiring to pursue premed studies, I wanted to do more than just study textbooks—I wanted to use technology and creativity to help others build healthy habits. As AI will continue to take over the world in the future, I thought that it would be important to adress this.
 
 **What Makes Sparkles Unique**
 
@@ -27,8 +27,6 @@ Sparkles is a big step in my journey toward a career in medicine and technology.
 
 Instructions:
 This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/drive/1CznUqjhZxnADzMIZuQx_7IJUkhVHFi6m
 
 Prerequisites:  Node.js
 
