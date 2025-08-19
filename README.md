@@ -36,4 +36,4 @@ Prerequisites:  Node.js
 3. Run the app:
    `npm run dev`
 
-**also: You need a API Key for Gemini, feel free to change it into a different AI model, though you will need to change the code**
+**Also: You need a API Key for Gemini, feel free to change it into a different AI model, though you will need to change the code.**
